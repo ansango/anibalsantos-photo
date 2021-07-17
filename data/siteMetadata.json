@@ -1,0 +1,17 @@
+{
+  "title": "ansango photo",
+  "author": "Anibal Santos",
+  "headerTitle": "ansango photo",
+  "description": "a photography blog that tells stories and sometimes noise.",
+  "language": "en-us",
+  "siteUrl": "",
+  "siteRepo": "",
+  "image": "/static/images/profile.png",
+  "socialBanner": "/static/images/twitter-card.png",
+  "email": "anibalsantosgo@gmail.com",
+  "github": "https://github.com/ansango",
+  "twitter": "https://twitter.com/iamasync_",
+  "instagram": "https://instagram.com/iamasync",
+  "linkedin": "https://www.linkedin.com/in/ansango",
+  "locale": "en-US"
+}
