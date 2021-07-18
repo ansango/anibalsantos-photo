@@ -31,7 +31,8 @@ const Carousel = ({ data }) => {
     >
       {images.map((panel, index) => (
         <SwiperSlide key={index}>
-          <Link href={`/stories/${slug}`}>
+          {/* <Link href={`/stories/${slug}`}> */}
+          <Link href={`/`}>
             <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
           </Link>
         </SwiperSlide>
