@@ -2,7 +2,6 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-
 import Carousel from '@/components/Carousel'
 
 const MAX_DISPLAY = 5
@@ -13,7 +12,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  console.log(posts)
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
@@ -28,9 +26,9 @@ export default function Home({ posts }) {
         </div>
 
         {!posts.length && 'No posts found.'}
-        <div className="grid gap-5 lg:gap-8 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
+        <div className="grid gap-3 lg:gap-5 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
           {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
-            return <Carousel key={index} data={frontMatter} />
+            return <Carousel data={frontMatter} key={index} />
           })}
         </div>
       </div>
