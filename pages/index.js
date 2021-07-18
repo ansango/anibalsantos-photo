@@ -27,7 +27,7 @@ export default function Home({ posts }) {
         </div>
 
         {!posts.length && 'No posts found.'}
-        <div className="grid gap-8 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
+        <div className="grid gap-5 lg:gap-8 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
           {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
             return <Carousel key={index} data={frontMatter} />
           })}
