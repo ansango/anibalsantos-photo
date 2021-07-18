@@ -9,7 +9,14 @@ const Modal = ({ onClose, onImg }) => {
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <Image src={onImg} alt="" width={1920} height={1200} onClick={onClose} />
+              <Image
+                className="cursor-pointer"
+                src={onImg}
+                alt=""
+                width={1920}
+                height={1200}
+                onClick={onClose}
+              />
             </div>
           </div>
         </div>
