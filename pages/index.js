@@ -2,17 +2,18 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+
 import Carousel from '@/components/Carousel'
 
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('stories')
-
   return { props: { posts } }
 }
 
 export default function Home({ posts }) {
+  console.log(posts)
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />

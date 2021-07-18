@@ -1,6 +1,5 @@
 import Image from '@/components/Image'
 import Link from '@/components/Link'
-import { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 // Import Swiper styles
@@ -13,7 +12,7 @@ SwiperCore.use([Pagination])
 
 const Carousel = ({ data }) => {
   const { slug, images } = data
-
+  /* <Link href={`/stories/${slug}`}> */
   return (
     <Swiper
       className="w-full h-full"
@@ -29,14 +28,15 @@ const Carousel = ({ data }) => {
         1600: { width: 1920, slidesPerView: 3, spaceBetween: 40 },
       }}
     >
-      {images.map((panel, index) => (
-        <SwiperSlide key={index}>
-          {/* <Link href={`/stories/${slug}`}> */}
-          <Link href={`/`}>
-            <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
-          </Link>
-        </SwiperSlide>
-      ))}
+      {images.map((panel, index) => {
+        return (
+          <SwiperSlide key={index}>
+            <Link href={`/`}>
+              <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
+            </Link>
+          </SwiperSlide>
+        )
+      })}
     </Swiper>
   )
 }
