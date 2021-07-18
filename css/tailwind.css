@@ -30,3 +30,7 @@
 html {
   scroll-behavior: smooth;
 }
+html,
+#__next {
+  @apply h-screen;
+}
