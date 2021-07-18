@@ -1,6 +1,7 @@
 import { PageSeo } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import dynamic from 'next/dynamic'
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('stories')
@@ -8,13 +9,16 @@ export async function getStaticProps() {
   return { props: { posts } }
 }
 
-const DEFAULT_CENTER = [38.907132, -77.036546]
-
 export default function Places({ posts }) {
   const { location } = posts
+  const MapWithNoSSR = dynamic(() => import('../components/Map'), {
+    ssr: false,
+  })
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
+
+      <MapWithNoSSR />
     </>
   )
 }
