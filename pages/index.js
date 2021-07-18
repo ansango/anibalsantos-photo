@@ -17,7 +17,7 @@ export default function Home({ posts }) {
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+        <div className="pt-6 pb-8 space-y-2 md:space-y-5 px-5 md:px-20">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             ansango photo
           </h1>
@@ -27,7 +27,7 @@ export default function Home({ posts }) {
         </div>
 
         {!posts.length && 'No posts found.'}
-        <div className="grid gap-3 pt-48 pb-64">
+        <div className="grid gap-3 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
           {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
             return <Carousel key={index} data={frontMatter} />
           })}

@@ -4,13 +4,15 @@ import Nav from './Nav'
 
 const LayoutWrapper = ({ children }) => {
   return (
-    <SectionContainer>
-      <div className="flex flex-col justify-between h-screen">
+    <>
+      <SectionContainer>
         <Nav />
-        <main className="mb-auto">{children}</main>
+      </SectionContainer>
+      <main>{children}</main>
+      <SectionContainer>
         <Footer />
-      </div>
-    </SectionContainer>
+      </SectionContainer>
+    </>
   )
 }
 
