@@ -1,36 +1,42 @@
-import Flicking from '@egjs/react-flicking'
-import '@egjs/react-flicking/dist/flicking.css'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
+import { useRef, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/swiper.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+// import Swiper core and required modules
+import SwiperCore, { Pagination } from 'swiper/core'
+
+SwiperCore.use([Pagination])
 
 const Carousel = ({ data }) => {
   const { slug, images } = data
 
   return (
-    <>
-      <Link
-        key={`${slug}-desktop`}
-        href={`/stories/${slug}`}
-        className="pt-20 pb-10 hidden lg:block"
-      >
-        <Flicking align="prev" interruptable={false} moveType="freeScroll" bound={true}>
-          {images.map((panel, index) => (
-            <div key={index} className="px-4">
-              <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
-            </div>
-          ))}
-        </Flicking>
-      </Link>
-      <Link key={`${slug}-mobile`} href={`/stories/${slug}`} className="lg:hidden">
-        <Flicking align="prev" interruptable={false} moveType="freeScroll" bound={true}>
-          {images.map((panel, index) => (
-            <div key={index} className="px-2">
-              <Image className="rounded-md" alt="" src={panel} width={320} height={200} />
-            </div>
-          ))}
-        </Flicking>
-      </Link>
-    </>
+    <Swiper
+      className="w-full h-full"
+      slidesPerView={2}
+      spaceBetween={40}
+      width={320}
+      breakpoints={{
+        576: { width: 768 },
+        768: { width: 992, slidesPerView: 3 },
+        992: { width: 1024, slidesPerView: 3 },
+        1024: { width: 1200, slidesPerView: 3 },
+        1200: { width: 1600, slidesPerView: 3 },
+        1600: { width: 1920, slidesPerView: 3 },
+      }}
+    >
+      {images.map((panel, index) => (
+        <SwiperSlide key={index}>
+          <Link href={`/stories/${slug}`}>
+            <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
+          </Link>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }
 

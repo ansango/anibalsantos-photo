@@ -12,7 +12,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@egjs/react-flicking": "^4.1.2",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
@@ -33,6 +32,7 @@
     "remark-gfm": "^1.0.0",
     "remark-math": "^4.0.0",
     "remark-slug": "6.0.0",
+    "swiper": "^6.7.5",
     "tailwindcss": "^2.2.2"
   },
   "devDependencies": {
