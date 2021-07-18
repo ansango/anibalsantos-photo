@@ -12,7 +12,7 @@ const Image = ({ ...rest }) => {
       className="opacity-0 transition-opacity duration-700"
       style={{ opacity: isLoaded ? '100' : '0' }}
     >
-      <NextImage {...rest} onLoad={onLoadHandler} />
+      <NextImage {...rest} onLoad={onLoadHandler} objectFit={true} />
     </div>
   )
 }

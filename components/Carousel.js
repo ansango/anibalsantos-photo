@@ -11,8 +11,7 @@ import SwiperCore, { Pagination } from 'swiper/core'
 SwiperCore.use([Pagination])
 
 const Carousel = ({ data }) => {
-  const { slug, images } = data
-  /* <Link href={`/stories/${slug}`}> */
+  const { slug, carousel } = data
   return (
     <Swiper
       className="w-full h-full"
@@ -28,10 +27,10 @@ const Carousel = ({ data }) => {
         1600: { width: 1920, slidesPerView: 3, spaceBetween: 40 },
       }}
     >
-      {images.map((panel, index) => {
+      {carousel.map((panel, index) => {
         return (
           <SwiperSlide key={index}>
-            <Link href={`/`}>
+            <Link href={`/stories/${slug}`}>
               <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
             </Link>
           </SwiperSlide>
