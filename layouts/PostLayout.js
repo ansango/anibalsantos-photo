@@ -5,11 +5,12 @@ import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ImageStorie from '@/components/ImageStorie'
+import PlaceText from '@/components/PlaceText'
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children, MapPost }) {
-  const { slug, date, title, tags, gallery, location, mapCenter, mapZoom } = frontMatter
+  const { slug, date, title, places, tags, gallery, location, mapCenter, mapZoom } = frontMatter
   const mapSettings = { coordinates: location, center: mapCenter, zoom: mapZoom }
   return (
     <SectionContainer>
@@ -47,11 +48,20 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
                 {tags && (
-                  <div className="py-4 xl:py-8">
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
+                  <div className="lg:flex justify-between py-4 xl:py-8">
+                    <div className="py-2">
+                      <div className="flex flex-wrap">
+                        {tags.map((tag) => (
+                          <Tag key={tag} text={tag} />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="flex flex-wrap">
+                        {places.map((place, index) => (
+                          <PlaceText key={index} text={place} />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
