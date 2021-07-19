@@ -26,20 +26,20 @@ export default function Home({ posts }) {
         </div>
 
         {!posts.length && 'No posts found.'}
-        <div className="grid gap-3 lg:gap-5 pt-24 pb-16 lg:pt-48 lg:pb-64 pl-5 md:pl-16">
+        <div className="grid gap-3 lg:gap-5 pt-24 pb-16 lg:pt-48 lg:pb-24 pl-5 md:pl-16">
           {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
             return <Carousel data={frontMatter} key={index} />
           })}
         </div>
       </div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
+        <div className="flex justify-end text-base font-medium leading-6 px-8 lg:px-32">
           <Link
             href="/stories"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="all posts"
           >
-            All Posts &rarr;
+            Stories &rarr;
           </Link>
         </div>
       )}
