@@ -26,7 +26,7 @@ export default function Pagination({ totalPages, currentPage }) {
           </button>
         )}
         {nextPage && (
-          <Link href={`/stories/stories/${currentPage + 1}`}>
+          <Link href={`/stories/page/${currentPage + 1}`}>
             <button rel="next">Next</button>
           </Link>
         )}
