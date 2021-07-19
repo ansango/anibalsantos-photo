@@ -2,22 +2,15 @@ import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
-import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ImageStorie from '@/components/ImageStorie'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/stories/${fileName}`
-const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/stories/${slug}`
-  )}`
-
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, date, title, tags, gallery } = frontMatter
-
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children, MapPost }) {
+  const { slug, date, title, tags, gallery, location, mapCenter, mapZoom } = frontMatter
+  const mapSettings = { coordinates: location, center: mapCenter, zoom: mapZoom }
   return (
     <SectionContainer>
       <BlogSeo
@@ -44,11 +37,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             </div>
           </header>
+
           <div className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700">
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
             <ImageStorie gallery={gallery} />
+            <MapPost isActive={true} mapSettings={mapSettings} />
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
                 {tags && (

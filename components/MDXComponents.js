@@ -9,9 +9,11 @@ export const MDXComponents = {
   Image,
   a: CustomLink,
   pre: Pre,
-  wrapper: ({ components, layout, ...rest }) => {
+  wrapper: ({ components, layout, map, ...rest }) => {
+    rest = { MapPost: map, ...rest }
+    const MapPost = map
     const Layout = require(`../layouts/${layout}`).default
-    return <Layout {...rest} />
+    return <Layout {...rest} {...MapPost} />
   },
 }
 
