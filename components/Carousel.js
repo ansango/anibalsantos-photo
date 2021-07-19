@@ -48,7 +48,7 @@ const Carousel = ({ data }) => {
           return (
             <SwiperSlide key={index}>
               <Link href={`/stories/${slug}`}>
-                <Image className="rounded-md" alt="" src={panel} width={768} height={476} />
+                <Image className="rounded-md" alt="" src={panel} width={615} height={380} />
               </Link>
             </SwiperSlide>
           )
