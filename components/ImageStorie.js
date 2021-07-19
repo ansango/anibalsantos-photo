@@ -16,7 +16,7 @@ const ImageStorie = ({ gallery }) => {
   return (
     <>
       {showModal && !isMobile && <Modal onClose={onCloseHandler} onImg={srcImg} />}
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-7 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-7 lg:grid-cols-3 pt-10">
         {gallery.map((src, index) => {
           return (
             <button

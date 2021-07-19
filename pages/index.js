@@ -36,8 +36,8 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6 px-8 lg:px-32">
           <Link
             href="/stories"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="all posts"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-bold"
+            aria-label="stories"
           >
             Stories &rarr;
           </Link>
