@@ -71,11 +71,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </div>
                 )}
                 {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                  <div className="flex justify-between py-4 xl:py-8">
                     {prev && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Previous Article
+                      <div className="text-left">
+                        <h2 className="text-xs tracking-wide text-gray-500 italic dark:text-gray-400">
+                          Previous
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/stories/${prev.slug}`}>{prev.title}</Link>
@@ -83,9 +83,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       </div>
                     )}
                     {next && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Next Article
+                      <div className="text-right">
+                        <h2 className="text-xs tracking-wide text-gray-500 italic dark:text-gray-400">
+                          Next
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/stories/${next.slug}`}>{next.title}</Link>
