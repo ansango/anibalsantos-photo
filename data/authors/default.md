@@ -1,16 +1,16 @@
 ---
 name: Anibal Santos
-avatar: /static/images/profile.png
+avatar: /static/images/profile.jpg
 occupation: Frontend Developer
 company: Everis
 email: anibalsantosgo@gmail.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com
-github: https://github.com
+github: https://github.com/ansango
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+I was born in Salamanca, Spain. Taking pictures is one of my passions, that's why I created this little page, to show you my stories.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+I started with film photography in 2012 and since then I've made a few rolls of film. But I've been taking pictures since 2005, period in which I got my first camera.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Nowadays I usually do more travel photography, years ago I used to do a lot of skateboard and music photography.
