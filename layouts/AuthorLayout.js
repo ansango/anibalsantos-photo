@@ -16,7 +16,6 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
         <div className="">
           <Image src={avatar} alt="avatar" width={700} height={630} />
-
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">{children}</div>
         </div>
       </div>
