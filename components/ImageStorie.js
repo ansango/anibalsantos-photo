@@ -24,7 +24,14 @@ const ImageStorie = ({ gallery }) => {
               key={index}
               onClick={() => onOpenHandler(src)}
             >
-              <Image className="rounded-md" src={src} alt="" width={680} height={420} />
+              <Image
+                className="rounded-md"
+                src={src}
+                alt=""
+                width={680}
+                height={420}
+                quality={33}
+              />
             </button>
           )
         })}

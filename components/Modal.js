@@ -15,6 +15,7 @@ const Modal = ({ onClose, onImg }) => {
                 alt=""
                 width={1232}
                 height={770}
+                quality={50}
                 onClick={onClose}
               />
             </div>
