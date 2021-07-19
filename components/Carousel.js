@@ -16,7 +16,7 @@ const Carousel = ({ data }) => {
   const { slug, carousel, title, tags } = data
   return (
     <>
-      <div className="md:flex items-end md:space-x-4">
+      <div className="lg:flex items-end lg:space-x-4">
         <Link href={`/stories/${slug}`}>
           <h2 className="font-bold text-xl md:text-3xl">{title}</h2>
         </Link>
