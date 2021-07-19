@@ -1,10 +1,10 @@
 import '@/css/tailwind.css'
-
+import * as ga from '@/lib/ga'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-
 import LayoutWrapper from '@/components/LayoutWrapper'
-
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 
 const MapWithNoSSR = dynamic(() => import('../components/MapLeaf'), {
@@ -12,6 +12,18 @@ const MapWithNoSSR = dynamic(() => import('../components/MapLeaf'), {
 })
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   pageProps = { MapNoSSR: MapWithNoSSR, ...pageProps }
   return (
     <ThemeProvider attribute="class">

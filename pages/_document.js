@@ -33,6 +33,18 @@ class MyDocument extends Document {
             integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
             crossOrigin="anonymous"
           />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=G-RWYBL43Q0E`} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+             gtag('config', 'G-RWYBL43Q0E');
+          `,
+            }}
+          />
         </Head>
         <body className="antialiased text-black bg-white dark:bg-gray-900 dark:text-white">
           <Main />
