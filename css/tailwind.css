@@ -34,3 +34,9 @@ html,
 #__next {
   @apply h-screen;
 }
+
+.map-leaf {
+  height: 600px;
+  z-index: 2;
+  border-radius: 0.5rem;
+}

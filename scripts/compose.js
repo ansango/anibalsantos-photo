@@ -38,8 +38,9 @@ const genFrontMatter = (answers) => {
   tags: [${answers.tags ? tags : ''}]
   draft: ${answers.draft === 'yes' ? true : false}
   summary: ${answers.summary ? answers.summary : ' '}
-  carousel: [],
-  gallery:[],
+  location:[]
+  carousel: []
+  gallery:[]
   layout: ${answers.layout}
   `
 

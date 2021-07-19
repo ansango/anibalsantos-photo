@@ -10,15 +10,14 @@ export async function getStaticProps() {
 }
 
 export default function Places({ posts }) {
-  const { location } = posts
-  const MapWithNoSSR = dynamic(() => import('../components/Map'), {
+  const locations = posts.map((post) => post.location)
+  const MapWithNoSSR = dynamic(() => import('../components/MapLeaf'), {
     ssr: false,
   })
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
-
-      <MapWithNoSSR />
+      <MapWithNoSSR data={locations} />
     </>
   )
 }
