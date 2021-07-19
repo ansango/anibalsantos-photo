@@ -33,12 +33,15 @@ const genFrontMatter = (answers) => {
   const authorArray = answers.authors.length > 0 ? "'" + answers.authors.join("','") + "'" : ''
 
   let frontMatter = dedent`---
+  draft: ${answers.draft === 'yes' ? true : false}
   title: ${answers.title ? answers.title : 'Untitled'}
   date: '${date}'
-  tags: [${answers.tags ? tags : ''}]
-  draft: ${answers.draft === 'yes' ? true : false}
   summary: ${answers.summary ? answers.summary : ' '}
+  tags: [${answers.tags ? tags : ''}]
+  places: []
   location:[]
+  mapCenter: []
+  mapZoom:
   carousel: []
   gallery:[]
   layout: ${answers.layout}
