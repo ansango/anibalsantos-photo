@@ -13,8 +13,8 @@ const Modal = ({ onClose, onImg }) => {
                 className="cursor-pointer"
                 src={onImg}
                 alt=""
-                width={1920}
-                height={1200}
+                width={1232}
+                height={770}
                 onClick={onClose}
               />
             </div>
