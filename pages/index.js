@@ -3,6 +3,8 @@ import { PageSeo } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Carousel from '@/components/Carousel'
+import Image from '@/components/Image'
+import Banner from '@/components/Banner'
 
 const MAX_DISPLAY = 5
 
@@ -24,7 +26,7 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-
+        <Banner />
         {!posts.length && 'No posts found.'}
         <div className="grid gap-3 lg:gap-5 pt-24 pb-16 lg:pt-48 lg:pb-24 pl-5 md:pl-16">
           {posts.slice(0, MAX_DISPLAY).map((frontMatter, index) => {
