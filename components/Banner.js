@@ -23,7 +23,7 @@ const Banner = () => {
   return (
     <Link
       href={isDark ? bannerImgs.dark.href : bannerImgs.light.href}
-      className="flex justify-center px-5 xl:px-10 pt-24"
+      className="flex justify-center px-5 pt-8 lg:pt-24 xl:px-10 "
     >
       <div className="flex items-center xl:pr-4">
         {!isDark && (

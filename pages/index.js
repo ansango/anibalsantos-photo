@@ -18,7 +18,7 @@ export default function Home({ posts }) {
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5 px-5 md:px-20">
+        <div id="index-id" className="pt-6 pb-8 space-y-2 md:space-y-5 px-5 md:px-20">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             ansango photo
           </h1>

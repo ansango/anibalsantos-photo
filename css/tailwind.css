@@ -35,6 +35,13 @@ html,
   @apply h-screen;
 }
 
+@media screen and (min-width: 2000px) {
+  #index-id {
+    max-width: 2000px;
+    margin: auto;
+  }
+}
+
 .map-leaf {
   height: 600px;
   z-index: 2;
