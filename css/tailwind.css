@@ -40,3 +40,11 @@ html,
   z-index: 2;
   border-radius: 0.5rem;
 }
+
+.map-leaf .leaflet-control-attribution.leaflet-control {
+  @apply hidden;
+}
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+  @apply xl:hidden;
+}
