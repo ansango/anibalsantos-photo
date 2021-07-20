@@ -61,12 +61,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         ))}
                       </div>
                     </div>
-                    <div className="">
-                      <div className="flex flex-wrap">
-                        {places.map((place, index) => (
-                          <PlaceText key={index} text={place} />
-                        ))}
-                      </div>
+
+                    <div className="flex flex-wrap items-center">
+                      {places.map((place, index) => (
+                        <PlaceText key={index} text={place} />
+                      ))}
                     </div>
                   </div>
                 )}
