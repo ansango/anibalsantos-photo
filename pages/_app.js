@@ -1,8 +1,9 @@
 import '@/css/tailwind.css'
 import * as ga from '@/lib/ga'
+import LayoutWrapper from '@/components/LayoutWrapper'
+import ScrollToTop from '@/components/ScrollToTop'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import LayoutWrapper from '@/components/LayoutWrapper'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <LayoutWrapper>
         <Component {...pageProps} />
+        <ScrollToTop />
       </LayoutWrapper>
     </ThemeProvider>
   )
