@@ -72,6 +72,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 )}
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:py-8">
+                    {!prev && <div></div>}
                     {prev && (
                       <div className="text-left">
                         <h2 className="text-xs tracking-wide text-gray-500 italic dark:text-gray-400">
@@ -82,6 +83,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         </div>
                       </div>
                     )}
+                    {!next && <div></div>}
                     {next && (
                       <div className="text-right">
                         <h2 className="text-xs tracking-wide text-gray-500 italic dark:text-gray-400">
