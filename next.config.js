@@ -39,3 +39,10 @@ module.exports = withBundleAnalyzer({
     return config
   },
 })
+
+module.exports = {
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
+}
