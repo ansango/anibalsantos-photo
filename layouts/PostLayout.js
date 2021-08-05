@@ -45,7 +45,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
             <div>
               <ImageStorie gallery={gallery} />
-              <MapPost isActive={true} mapSettings={mapSettings} />
+              {/* <MapPost isActive={true} mapSettings={mapSettings} /> */}
             </div>
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
