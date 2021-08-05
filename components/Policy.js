@@ -26,7 +26,7 @@ const Policy = () => {
   }
   return !policyAccepted ? (
     <div className="max-w-3xl mx-auto xl:max-w-5xl">
-      <div className="fixed bottom-0 md:bottom-4 max-w-3xl mx-auto xl:max-w-5xl">
+      <div className="fixed bottom-0 md:bottom-4 max-w-3xl mx-auto xl:max-w-5xl z-10">
         <div className="rounded-md bg-primary-100 dark:bg-gray-700 p-5 md:flex md:justify-between">
           <div className="flex py-4 md:py-2">
             <div className="flex items-center px-4">
