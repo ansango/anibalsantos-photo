@@ -7,6 +7,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Policy from '@/components/Policy'
 
 const MapWithNoSSR = dynamic(() => import('../components/MapLeaf'), {
   ssr: false,
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
         <ScrollToTop />
       </LayoutWrapper>
+      <Policy />
     </ThemeProvider>
   )
 }
