@@ -1,19 +1,19 @@
+import { useTheme } from 'next-themes'
 import NextImage from 'next/image'
-import { useState } from 'react'
 
 // eslint-disable-next-line jsx-a11y/alt-text
 const Image = ({ ...rest }) => {
-  const [isLoading, setIsLoaded] = useState(false)
-  const onLoadHandler = () => {
-    setIsLoaded(true)
-  }
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
   return (
-    <div
-      className="opacity-0 transition-opacity duration-700"
-      style={{ opacity: isLoading ? '100' : '0' }}
-    >
-      <NextImage {...rest} onLoad={onLoadHandler} objectFit={true} />
-    </div>
+    <>
+      <NextImage
+        {...rest}
+        objectFit={true}
+        placeholder="blur"
+        blurDataURL={isDark ? '/static/images/blur-dark.jpg' : '/static/images/blur-light.jpg'}
+      />
+    </>
   )
 }
 
