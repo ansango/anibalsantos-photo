@@ -14,10 +14,15 @@ export default function PlacesLayout({ posts }) {
   const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const addPlaceHandler = (place) => {
+    setIsLoading(true)
     setPlace('')
     setPlace(place)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
   }
   return (
     <div>
@@ -27,7 +32,8 @@ export default function PlacesLayout({ posts }) {
         viewPage={true}
         title="All places where I shooted"
       />
-      <PlacesGallery galleryMap={allLocationsPosts} place={place} />
+      {isLoading && <p>Loading</p>}
+      {!isLoading && <PlacesGallery galleryMap={allLocationsPosts} place={place} />}
     </div>
   )
 }
