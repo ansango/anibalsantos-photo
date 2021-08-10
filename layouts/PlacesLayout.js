@@ -1,19 +1,6 @@
-import ImageStorie from '@/components/ImageStorie'
 import Places from '@/components/Places'
+import PlacesGallery from '@/components/PlacesGallery'
 import { useState } from 'react'
-
-const PhotoGallery = ({ galleryMap, place }) => {
-  const data = galleryMap.filter((loc) => loc.name === place)
-  const gallery = data.map((item) => item.img).flat()
-  return (
-    <div>
-      <div>{place}</div>
-      <div className="px-16">
-        <ImageStorie gallery={gallery} />
-      </div>
-    </div>
-  )
-}
 
 export default function PlacesLayout({ posts }) {
   const allLocationsPosts = posts
@@ -34,8 +21,8 @@ export default function PlacesLayout({ posts }) {
   }
   return (
     <div>
-      <Places mapSettings={mapSettings} onLocationSelected={addPlaceHandler} />
-      <PhotoGallery galleryMap={allLocationsPosts} place={place} />
+      <Places mapSettings={mapSettings} onLocationSelected={addPlaceHandler} viewPage={true} />
+      <PlacesGallery galleryMap={allLocationsPosts} place={place} />
     </div>
   )
 }

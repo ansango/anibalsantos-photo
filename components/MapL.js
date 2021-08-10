@@ -5,68 +5,116 @@ import 'leaflet-defaulticon-compatibility'
 import { LIGHTMAP, DARKMAP } from '@/lib/maps'
 import { useTheme } from 'next-themes'
 
-const MapLight = ({ mapSettings, onLocationSelected }) => {
+const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
   return (
-    <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
-      <TileLayer url={LIGHTMAP} />
-      {coordinates.map((coordinate, index) => {
-        return (
-          <CircleMarker
-            key={index}
-            center={coordinate.loc}
-            fillOpacity={1}
-            radius={10}
-            pathOptions={{ color: 'red' }}
-            stroke={false}
-            eventHandlers={{
-              click: () => {
-                onLocationSelected(coordinate.name)
-              },
-            }}
-          >
-            <Tooltip>
-              <div className="font-bold">{coordinate.name}</div>
-            </Tooltip>
-          </CircleMarker>
-        )
-      })}
-    </MapContainer>
+    <>
+      {viewPage ? (
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
+          <TileLayer url={LIGHTMAP} />
+          {coordinates.map((coordinate, index) => {
+            return (
+              <CircleMarker
+                key={index}
+                center={coordinate.loc}
+                fillOpacity={1}
+                radius={10}
+                pathOptions={{ color: 'red' }}
+                stroke={false}
+                eventHandlers={{
+                  click: () => {
+                    onLocationSelected(coordinate.name)
+                  },
+                }}
+              >
+                <Tooltip>
+                  <div className="font-bold">{coordinate.name}</div>
+                </Tooltip>
+              </CircleMarker>
+            )
+          })}
+        </MapContainer>
+      ) : (
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
+          <TileLayer url={LIGHTMAP} />
+          {coordinates.map((coordinate, index) => {
+            return (
+              <CircleMarker
+                key={index}
+                center={coordinate.loc}
+                fillOpacity={1}
+                radius={10}
+                pathOptions={{ color: 'red' }}
+                stroke={false}
+              >
+                <Tooltip>
+                  <div className="font-bold">{coordinate.name}</div>
+                </Tooltip>
+              </CircleMarker>
+            )
+          })}
+        </MapContainer>
+      )}
+    </>
   )
 }
 
-const MapDark = ({ mapSettings, onLocationSelected }) => {
+const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
 
   return (
-    <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
-      <TileLayer url={DARKMAP} />
-      {coordinates.map((coordinate, index) => {
-        return (
-          <CircleMarker
-            key={index}
-            center={coordinate.loc}
-            fillOpacity={1}
-            radius={10}
-            pathOptions={{ color: 'red' }}
-            stroke={false}
-            eventHandlers={{
-              click: () => {
-                onLocationSelected(coordinate.name)
-              },
-            }}
-          >
-            <Tooltip>
-              <div className="font-bold">{coordinate.name}</div>
-            </Tooltip>
-          </CircleMarker>
-        )
-      })}
-    </MapContainer>
+    <>
+      {viewPage ? (
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
+          <TileLayer url={DARKMAP} />
+          {coordinates.map((coordinate, index) => {
+            return (
+              <CircleMarker
+                key={index}
+                center={coordinate.loc}
+                fillOpacity={1}
+                radius={10}
+                pathOptions={{ color: 'red' }}
+                stroke={false}
+                eventHandlers={{
+                  click: () => {
+                    onLocationSelected(coordinate.name)
+                  },
+                }}
+              >
+                <Tooltip>
+                  <div className="font-bold">{coordinate.name}</div>
+                </Tooltip>
+              </CircleMarker>
+            )
+          })}
+        </MapContainer>
+      ) : (
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
+          <TileLayer url={DARKMAP} />
+          {coordinates.map((coordinate, index) => {
+            return (
+              <CircleMarker
+                key={index}
+                center={coordinate.loc}
+                fillOpacity={1}
+                radius={10}
+                pathOptions={{ color: 'red' }}
+                stroke={false}
+              >
+                <Tooltip>
+                  <div className="font-bold">{coordinate.name}</div>
+                </Tooltip>
+              </CircleMarker>
+            )
+          })}
+        </MapContainer>
+      )}
+    </>
   )
 }
 
-const MapL = ({ mapSettings, onLocationSelected }) => {
+const MapL = ({ mapSettings, onLocationSelected, viewPage = false }) => {
   const { theme } = useTheme()
   return (
     <div className="pb-10 mx-auto container">
@@ -77,9 +125,17 @@ const MapL = ({ mapSettings, onLocationSelected }) => {
         </span>
       </h3>
       {theme !== 'dark' ? (
-        <MapLight mapSettings={mapSettings} onLocationSelected={onLocationSelected} />
+        <MapLight
+          mapSettings={mapSettings}
+          onLocationSelected={onLocationSelected}
+          viewPage={viewPage}
+        />
       ) : (
-        <MapDark mapSettings={mapSettings} onLocationSelected={onLocationSelected} />
+        <MapDark
+          mapSettings={mapSettings}
+          onLocationSelected={onLocationSelected}
+          viewPage={viewPage}
+        />
       )}
     </div>
   )
