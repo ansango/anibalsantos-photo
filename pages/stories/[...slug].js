@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
   return { props: { post, authorDetails, prev, next } }
 }
 
-export default function Blog({ post, authorDetails, prev, next, MapNoSSR }) {
+export default function Blog({ post, authorDetails, prev, next }) {
   const { mdxSource, frontMatter } = post
   return (
     <>
@@ -47,7 +47,6 @@ export default function Blog({ post, authorDetails, prev, next, MapNoSSR }) {
           <MDXLayoutRenderer
             layout={frontMatter.layout || DEFAULT_LAYOUT}
             mdxSource={mdxSource}
-            map={MapNoSSR}
             frontMatter={frontMatter}
             authorDetails={authorDetails}
             prev={prev}

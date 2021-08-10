@@ -1,4 +1,6 @@
-export default function PlacesLayout({ posts, MapNoSSR }) {
+import Places from '@/components/Places'
+
+export default function PlacesLayout({ posts }) {
   const locations = posts
     .map((post) => {
       return post.location.map((loc) => {
@@ -11,7 +13,7 @@ export default function PlacesLayout({ posts, MapNoSSR }) {
 
   return (
     <div>
-      <MapNoSSR isActive={true} mapSettings={mapSettings} />
+      <Places mapSettings={mapSettings} />
     </div>
   )
 }

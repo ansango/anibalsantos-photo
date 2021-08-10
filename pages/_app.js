@@ -9,10 +9,6 @@ import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Policy from '@/components/Policy'
 
-const MapWithNoSSR = dynamic(() => import('../components/MapLeaf'), {
-  ssr: false,
-})
-
 export default function App({ Component, pageProps }) {
   const router = useRouter()
   useEffect(() => {
@@ -26,7 +22,7 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-  pageProps = { MapNoSSR: MapWithNoSSR, ...pageProps }
+
   return (
     <ThemeProvider attribute="class">
       <Head>
