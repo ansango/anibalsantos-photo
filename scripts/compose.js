@@ -44,6 +44,7 @@ const genFrontMatter = (answers) => {
   mapZoom:
   carousel: []
   gallery:[]
+  galleryMap:[]
   layout: ${answers.layout}
   `
 

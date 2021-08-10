@@ -6,7 +6,6 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import dynamic from 'next/dynamic'
 import Policy from '@/components/Policy'
 
 export default function App({ Component, pageProps }) {

@@ -9,15 +9,13 @@ export async function getStaticProps() {
   return { props: { posts } }
 }
 
-export default function Places({ posts, MapNoSSR }) {
-  const entries = posts.map(
-    ({ draft, date, summary, tags, places, gallery, ...keepAttr }) => keepAttr
-  )
+export default function Places({ posts }) {
+  const entries = posts.map(({ draft, date, summary, tags, places, ...keepAttr }) => keepAttr)
 
   return (
     <>
       <PageSeo title={`Places`} description={siteMetadata.description} />
-      <PlacesLayout posts={entries} MapNoSSR={MapNoSSR} />
+      <PlacesLayout posts={entries} />
     </>
   )
 }

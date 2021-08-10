@@ -5,7 +5,7 @@ import 'leaflet-defaulticon-compatibility'
 import { LIGHTMAP, DARKMAP } from '@/lib/maps'
 import { useTheme } from 'next-themes'
 
-const MapLight = ({ mapSettings }) => {
+const MapLight = ({ mapSettings, onLocationSelected }) => {
   const { coordinates, center, zoom } = mapSettings
   return (
     <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
@@ -19,6 +19,11 @@ const MapLight = ({ mapSettings }) => {
             radius={10}
             pathOptions={{ color: 'red' }}
             stroke={false}
+            eventHandlers={{
+              click: () => {
+                onLocationSelected(coordinate.name)
+              },
+            }}
           >
             <Tooltip>
               <div className="font-bold">{coordinate.name}</div>
@@ -30,8 +35,9 @@ const MapLight = ({ mapSettings }) => {
   )
 }
 
-const MapDark = ({ mapSettings }) => {
+const MapDark = ({ mapSettings, onLocationSelected }) => {
   const { coordinates, center, zoom } = mapSettings
+
   return (
     <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="map-leaf">
       <TileLayer url={DARKMAP} />
@@ -44,6 +50,11 @@ const MapDark = ({ mapSettings }) => {
             radius={10}
             pathOptions={{ color: 'red' }}
             stroke={false}
+            eventHandlers={{
+              click: () => {
+                onLocationSelected(coordinate.name)
+              },
+            }}
           >
             <Tooltip>
               <div className="font-bold">{coordinate.name}</div>
@@ -55,9 +66,8 @@ const MapDark = ({ mapSettings }) => {
   )
 }
 
-const MapL = ({ mapSettings }) => {
+const MapL = ({ mapSettings, onLocationSelected }) => {
   const { theme } = useTheme()
-
   return (
     <div className="pb-10 mx-auto container">
       <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
@@ -67,9 +77,9 @@ const MapL = ({ mapSettings }) => {
         </span>
       </h3>
       {theme !== 'dark' ? (
-        <MapLight mapSettings={mapSettings} />
+        <MapLight mapSettings={mapSettings} onLocationSelected={onLocationSelected} />
       ) : (
-        <MapDark mapSettings={mapSettings} />
+        <MapDark mapSettings={mapSettings} onLocationSelected={onLocationSelected} />
       )}
     </div>
   )
