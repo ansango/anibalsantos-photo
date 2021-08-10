@@ -21,7 +21,12 @@ export default function PlacesLayout({ posts }) {
   }
   return (
     <div>
-      <Places mapSettings={mapSettings} onLocationSelected={addPlaceHandler} viewPage={true} />
+      <Places
+        mapSettings={mapSettings}
+        onLocationSelected={addPlaceHandler}
+        viewPage={true}
+        title="All places where I shooted"
+      />
       <PlacesGallery galleryMap={allLocationsPosts} place={place} />
     </div>
   )

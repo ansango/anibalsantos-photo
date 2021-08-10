@@ -7,12 +7,13 @@ const ComponentDynamic = dynamic(
   { ssr: false }
 )
 
-const Places = ({ mapSettings, onLocationSelected, viewPage }) => {
+const Places = ({ mapSettings, onLocationSelected, viewPage, title }) => {
   return (
     <ComponentDynamic
       mapSettings={mapSettings}
       onLocationSelected={onLocationSelected}
       viewPage={viewPage}
+      title={title}
     ></ComponentDynamic>
   )
 }
