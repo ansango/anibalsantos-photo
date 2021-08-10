@@ -11,7 +11,7 @@ export default function PlacesLayout({ posts }) {
     })
     .flat()
 
-  const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 15 }
+  const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState('')
 

@@ -5,13 +5,6 @@ date: '2020-09-04'
 summary: A trip to the center of Portugal and enjoying the summer
 tags: ['fujifilm', 'fuji c200', 'Canon EOS 50E']
 places: ['Lisboa', 'Sintra', 'Azenhas do Mar', 'Salamanca']
-location:
-  [
-    { name: 'Lisboa', loc: [38.70775, -9.13659] },
-    { name: 'Sintra', loc: [38.83556, -9.35223] },
-    { name: 'Azenhas do Mar', loc: [38.8369, -9.4603] },
-    { name: 'Salamanca', loc: [40.9701, -5.6635] },
-  ]
 mapCenter: [39.8369, -7.6]
 mapZoom: 7
 carousel:
@@ -21,25 +14,44 @@ carousel:
     '/static/stories/2020-09-04/08.jpg',
     '/static/stories/2020-09-04/12.jpg',
   ]
-gallery:
+galleryMap:
   [
-    '/static/stories/2020-09-04/02.jpg',
-    '/static/stories/2020-09-04/03.jpg',
-    '/static/stories/2020-09-04/04.jpg',
-    '/static/stories/2020-09-04/05.jpg',
-    '/static/stories/2020-09-04/06.jpg',
-    '/static/stories/2020-09-04/07.jpg',
-    '/static/stories/2020-09-04/08.jpg',
-    '/static/stories/2020-09-04/09.jpg',
-    '/static/stories/2020-09-04/10.jpg',
-    '/static/stories/2020-09-04/12.jpg',
-    '/static/stories/2020-09-04/13.jpg',
-    '/static/stories/2020-09-04/14.jpg',
-    '/static/stories/2020-09-04/15.jpg',
-    '/static/stories/2020-09-04/16.jpg',
-    '/static/stories/2020-09-04/17.jpg',
+    {
+      img: ['/static/stories/2020-09-04/02.jpg', '/static/stories/2020-09-04/03.jpg'],
+      name: 'Lisboa',
+      loc: [38.70775, -9.13659],
+    },
+    { img: ['/static/stories/2020-09-04/04.jpg'], name: 'Sintra', loc: [38.83556, -9.35223] },
+    {
+      img:
+        [
+          '/static/stories/2020-09-04/05.jpg',
+          '/static/stories/2020-09-04/06.jpg',
+          '/static/stories/2020-09-04/07.jpg',
+          '/static/stories/2020-09-04/08.jpg',
+          '/static/stories/2020-09-04/09.jpg',
+        ],
+      name: 'Azenhas do Mar',
+      loc: [38.8369, -9.4603],
+    },
+    {
+      img: ['/static/stories/2020-09-04/10.jpg'],
+      name: 'Boca do Inferno',
+      loc: [38.7531824, -9.3891445, 13.08],
+    },
+    {
+      img:
+        [
+          '/static/stories/2020-09-04/12.jpg',
+          '/static/stories/2020-09-04/13.jpg',
+          '/static/stories/2020-09-04/14.jpg',
+          '/static/stories/2020-09-04/16.jpg',
+          '/static/stories/2020-09-04/17.jpg',
+        ],
+      name: 'Salamanca',
+      loc: [40.9701, -5.6635],
+    },
   ]
-galleryMap: []
 ---
 
 <section>
