@@ -65,7 +65,7 @@ const PlacesGallery = ({ galleryMap, place }) => {
           pageNumbers.map((number) => {
             return (
               <button
-                className="p-5 text-lg text-primary-600 font-bold hover:text-primary-400"
+                className="p-3 sm:p-5 text-lg text-primary-600 font-bold hover:text-primary-400"
                 key={number}
                 id={number}
                 onClick={handleClick}
