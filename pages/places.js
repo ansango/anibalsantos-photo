@@ -10,7 +10,7 @@ export async function getStaticProps() {
 }
 
 export default function Places({ posts }) {
-  const entries = posts.map(({ draft, date, summary, tags, places, ...keepAttr }) => keepAttr)
+  const entries = posts.map(({ draft, date, summary, tags, title, ...keepAttr }) => keepAttr)
 
   return (
     <>

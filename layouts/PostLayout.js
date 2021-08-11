@@ -13,6 +13,7 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, title, places, tags, galleryMap, mapCenter, mapZoom } = frontMatter
   const gallery = galleryMap.flatMap((data) => data.img)
+  const placesData = places.map((place) => place.name)
   const mapSettings = { coordinates: galleryMap, center: mapCenter, zoom: mapZoom }
   return (
     <SectionContainer>
@@ -67,7 +68,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     </div>
 
                     <div className="flex flex-wrap items-center">
-                      {places.map((place, index) => (
+                      {placesData.map((place, index) => (
                         <PlaceText key={index} text={place} />
                       ))}
                     </div>

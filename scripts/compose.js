@@ -39,11 +39,9 @@ const genFrontMatter = (answers) => {
   summary: ${answers.summary ? answers.summary : ' '}
   tags: [${answers.tags ? tags : ''}]
   places: []
-  location:[]
   mapCenter: []
   mapZoom:
   carousel: []
-  gallery:[]
   galleryMap:[]
   layout: ${answers.layout}
   `
