@@ -1,7 +1,7 @@
+import { CardLoader, FillLoader, TitleLoader } from '@/components/Loader'
 import PageTitle from '@/components/PageTitle'
 import Places from '@/components/Places'
 import PlacesGallery from '@/components/PlacesGallery'
-
 import { useState } from 'react'
 
 export default function PlacesLayout({ posts }) {
@@ -18,7 +18,7 @@ export default function PlacesLayout({ posts }) {
   const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState(null)
-  const [isLoading, setisILoading] = useState(false)
+  const [isLoading, setisILoading] = useState(true)
   const addPlaceHandler = (_place) => {
     setisILoading(true)
     setPlace('')
@@ -50,7 +50,12 @@ export default function PlacesLayout({ posts }) {
 
         {isLoading ? (
           <>
-            <div>Loading</div>
+            <div>
+              <FillLoader amount={1} Component={TitleLoader} />
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3">
+              <FillLoader amount={6} Component={CardLoader} />
+            </div>
           </>
         ) : (
           <PlacesGallery galleryMap={allLocationsPosts} place={place} />
