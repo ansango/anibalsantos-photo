@@ -61,18 +61,19 @@ const PlacesGallery = ({ galleryMap, place }) => {
         })}
       </div>
       <div className="flex justify-center py-3">
-        {pageNumbers.map((number) => {
-          return (
-            <button
-              className="p-5 text-lg text-primary-600 font-bold hover:text-primary-400"
-              key={number}
-              id={number}
-              onClick={handleClick}
-            >
-              {number}
-            </button>
-          )
-        })}
+        {pageNumbers.length !== 1 &&
+          pageNumbers.map((number) => {
+            return (
+              <button
+                className="p-5 text-lg text-primary-600 font-bold hover:text-primary-400"
+                key={number}
+                id={number}
+                onClick={handleClick}
+              >
+                {number}
+              </button>
+            )
+          })}
       </div>
     </>
   )
