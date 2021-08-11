@@ -37,13 +37,16 @@ export default function PlacesLayout({ posts }) {
 
         {place && !isLoading && (
           <div>
-            <div className="text-center">
-              <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
+            <div>
+              <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8 text-center">
                 {place}
                 <span className="text-2xl md:text-3xl" role="img" aria-label="">
                   📍
                 </span>
               </h3>
+              <div className="border-dashed border-4 border-primary-200 rounded-md">
+                <div className="px-10"></div>
+              </div>
             </div>
           </div>
         )}

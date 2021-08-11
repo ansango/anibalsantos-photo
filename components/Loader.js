@@ -34,9 +34,9 @@ export const FillLoader = ({ amount, Component }) => {
     <>
       {Array(amount)
         .fill()
-        .map((index) => (
-          <Component key={index} />
-        ))}
+        .map((_, index) => {
+          return <Component key={index} />
+        })}
     </>
   )
 }

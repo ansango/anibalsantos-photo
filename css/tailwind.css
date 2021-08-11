@@ -53,5 +53,4 @@ html,
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {
-  @apply xl:hidden;
 }

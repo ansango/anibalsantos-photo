@@ -1,5 +1,5 @@
-import { ImArrowUp2 as ARROW } from 'react-icons/im'
 import { useEffect, useState } from 'react'
+import { ArrowUpIcon } from './icons'
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
   const scrollToTop = () => {
@@ -31,7 +31,7 @@ const ScrollToTop = () => {
         onClick={scrollToTop}
         role={role}
       >
-        <ARROW />
+        <ArrowUpIcon />
       </button>
     </div>
   )

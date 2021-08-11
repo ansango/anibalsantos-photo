@@ -5,6 +5,8 @@ import 'leaflet-defaulticon-compatibility'
 import { LIGHTMAP, DARKMAP } from '@/lib/maps'
 import { useTheme } from 'next-themes'
 
+const colorMarker = '#34D399'
+
 const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
   return (
@@ -19,7 +21,7 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
                 center={coordinate.loc}
                 fillOpacity={1}
                 radius={10}
-                pathOptions={{ color: 'red' }}
+                pathOptions={{ color: colorMarker }}
                 stroke={false}
                 eventHandlers={{
                   click: () => {
@@ -44,7 +46,7 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
                 center={coordinate.loc}
                 fillOpacity={1}
                 radius={10}
-                pathOptions={{ color: 'red' }}
+                pathOptions={{ color: colorMarker }}
                 stroke={false}
               >
                 <Tooltip>
@@ -74,7 +76,7 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
                 center={coordinate.loc}
                 fillOpacity={1}
                 radius={10}
-                pathOptions={{ color: 'red' }}
+                pathOptions={{ color: colorMarker }}
                 stroke={false}
                 eventHandlers={{
                   click: () => {
@@ -99,7 +101,7 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
                 center={coordinate.loc}
                 fillOpacity={1}
                 radius={10}
-                pathOptions={{ color: 'red' }}
+                pathOptions={{ color: colorMarker }}
                 stroke={false}
               >
                 <Tooltip>
