@@ -30,22 +30,24 @@ export default function PlacesLayout({ posts }) {
     <div className="px-5">
       <PageTitle>{'All places where I shooted'}</PageTitle>
       <div>Locations: {data.locations}</div>
-      <div className="flex flex-col xl:flex-row">
-        <div className="w-full xl:pr-5">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+        <div className="xl:col-span-2">
           <Places mapSettings={mapSettings} onLocationSelected={addPlaceHandler} viewPage={true} />
-          {place && !isLoading && (
-            <div>
-              <div className="text-center">
-                <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
-                  {place}
-                  <span className="text-2xl md:text-3xl" role="img" aria-label="">
-                    📍
-                  </span>
-                </h3>
-              </div>
-            </div>
-          )}
         </div>
+
+        {place && !isLoading && (
+          <div>
+            <div className="text-center">
+              <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
+                {place}
+                <span className="text-2xl md:text-3xl" role="img" aria-label="">
+                  📍
+                </span>
+              </h3>
+            </div>
+          </div>
+        )}
+
         {isLoading ? (
           <>
             <div>Loading</div>
