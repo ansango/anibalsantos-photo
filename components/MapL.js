@@ -114,16 +114,19 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
   )
 }
 
-const MapL = ({ mapSettings, onLocationSelected, viewPage = false, title = 'Locations' }) => {
+const MapL = ({ mapSettings, onLocationSelected, viewPage = false, title = null }) => {
   const { theme } = useTheme()
   return (
-    <div className="pb-10 mx-auto container">
-      <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
-        {title}
-        <span className="text-2xl md:text-3xl" role="img" aria-label="">
-          🌍
-        </span>
-      </h3>
+    <div>
+      {title && (
+        <h3 className="font-bold text-3xl md:text-4xl py-6 md:py-8">
+          {title}
+          <span className="text-2xl md:text-3xl" role="img" aria-label="">
+            🌍
+          </span>
+        </h3>
+      )}
+
       {theme !== 'dark' ? (
         <MapLight
           mapSettings={mapSettings}
