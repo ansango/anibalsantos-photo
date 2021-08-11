@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { SelectorIcon } from './icons'
+import { useRouter } from 'next/router'
 
 const ListSelector = ({
   data,
@@ -9,6 +10,7 @@ const ListSelector = ({
   emoji = null,
   counter = 0,
   onLocationSelected,
+  route = '/',
 }) => {
   const raw = data.map((item, index) => {
     return {
@@ -21,10 +23,11 @@ const ListSelector = ({
   raw.unshift({ id: 0, name: label, unavailable: true })
 
   const [selected, setSelected] = useState(raw[0])
-
+  const router = useRouter()
   const handleChange = (option) => {
     setSelected(option)
     onLocationSelected(option.name)
+    router.push(route)
   }
 
   return (

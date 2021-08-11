@@ -39,15 +39,15 @@ export default function PlacesLayout({ posts }) {
   const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState(null)
-  const [isLoading, setisILoading] = useState(false)
+  const [isLoading, setIsILoading] = useState(false)
   const addPlaceHandler = (_place) => {
-    setisILoading(true)
+    setIsILoading(true)
     setPlace('')
     setPlace(_place)
-    setTimeout(() => setisILoading(false), 1000)
+    setTimeout(() => setIsILoading(false), 1000)
   }
   return (
-    <div className="px-5">
+    <div className="w-full max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-screen-lg xl:max-w-screen-2xl">
       <PageTitle>All places where I shooted</PageTitle>
       <h2 className="font-bold text-xl md:text-2xl pt-2">
         <span role="img" aria-label="">
@@ -67,6 +67,7 @@ export default function PlacesLayout({ posts }) {
             emoji="📍"
             label="Select a place"
             onLocationSelected={addPlaceHandler}
+            route="/places#gallery"
           />
         </div>
         <div>
@@ -77,6 +78,7 @@ export default function PlacesLayout({ posts }) {
             emoji="🏙️"
             label="Select an area"
             onLocationSelected={addPlaceHandler}
+            route="/places#gallery"
           />
         </div>
         <div>
@@ -87,6 +89,7 @@ export default function PlacesLayout({ posts }) {
             emoji="🌍"
             label="Select a country"
             onLocationSelected={addPlaceHandler}
+            route="/places#gallery"
           />
         </div>
       </div>
@@ -99,19 +102,20 @@ export default function PlacesLayout({ posts }) {
             </span>
           </h3>
         )}
-
-        {isLoading ? (
-          <>
-            <div className="max-w-xl w-full mx-auto">
-              <FillLoader amount={1} Component={TitleLoader} />
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
-              <FillLoader amount={6} Component={CardLoader} />
-            </div>
-          </>
-        ) : (
-          <PlacesGallery galleryMap={allLocationsPosts} place={place} />
-        )}
+        <div id="gallery" className="py-10">
+          {isLoading ? (
+            <>
+              <div className="max-w-xl w-full mx-auto pb-5">
+                <FillLoader amount={1} Component={TitleLoader} />
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
+                <FillLoader amount={6} Component={CardLoader} />
+              </div>
+            </>
+          ) : (
+            <PlacesGallery galleryMap={allLocationsPosts} place={place} />
+          )}
+        </div>
       </div>
     </div>
   )

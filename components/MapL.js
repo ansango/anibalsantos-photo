@@ -4,11 +4,13 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet-defaulticon-compatibility'
 import { LIGHTMAP, DARKMAP } from '@/lib/maps'
 import { useTheme } from 'next-themes'
+import { useRouter } from 'next/router'
 
 const colorMarker = '#34D399'
 
 const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
+  const router = useRouter()
   return (
     <>
       {viewPage ? (
@@ -26,6 +28,7 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
                 eventHandlers={{
                   click: () => {
                     onLocationSelected(coordinate.place.name)
+                    router.push('/places#gallery')
                   },
                 }}
               >
@@ -63,7 +66,7 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
 
 const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
-
+  const router = useRouter()
   return (
     <>
       {viewPage ? (
@@ -81,6 +84,7 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
                 eventHandlers={{
                   click: () => {
                     onLocationSelected(coordinate.place.name)
+                    router.push('/places#gallery')
                   },
                 }}
               >
