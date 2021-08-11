@@ -14,7 +14,7 @@ export default function PlacesLayout({ posts }) {
 
   const raw = posts.map((post) => {
     const places = post.galleryMap.map((data) => data.place.name)
-    const cities = post.galleryMap.map((data) => data.place.city)
+    const cities = post.galleryMap.map((data) => data.place.area)
     const countries = post.galleryMap.map((data) => data.place.country)
     const images = post.galleryMap.flatMap((data) => data.img)
     return {
@@ -28,8 +28,8 @@ export default function PlacesLayout({ posts }) {
   const data = {
     places: [...new Set(raw.flatMap((post) => post.places))],
     placesLength: [...new Set(raw.flatMap((post) => post.places))].length,
-    cities: [...new Set(raw.flatMap((post) => post.cities))],
-    citiesLength: [...new Set(raw.flatMap((post) => post.cities))].length,
+    cities: [...new Set(raw.flatMap((post) => post.area))],
+    citiesLength: [...new Set(raw.flatMap((post) => post.area))].length,
     countries: [...new Set(raw.flatMap((post) => post.countries))],
     countriesLength: [...new Set(raw.flatMap((post) => post.countries))].length,
     images: raw.flatMap((post) => post.images).length,
@@ -68,7 +68,6 @@ export default function PlacesLayout({ posts }) {
             onLocationSelected={addPlaceHandler}
           />
         </div>
-
         <div>
           <ListSelector
             data={data.countries}
