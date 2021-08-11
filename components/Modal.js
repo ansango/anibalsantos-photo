@@ -1,3 +1,4 @@
+import { CloseIcon } from './icons'
 import Image from './Image'
 
 const Modal = ({ onClose, onImg }) => {
@@ -8,16 +9,14 @@ const Modal = ({ onClose, onImg }) => {
           {/*content*/}
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-900 outline-none focus:outline-none">
             {/*body*/}
-            <div className="relative p-6 flex-auto">
-              <Image
-                className="cursor-pointer"
-                src={onImg}
-                alt=""
-                width={1232}
-                height={770}
-                quality={50}
-                onClick={onClose}
-              />
+            <div className="relative p-2 sm:p-4 flex">
+              <Image src={onImg} alt="" width={1232} height={770} quality={50} />
+              <button onClick={onClose}>
+                <CloseIcon
+                  size={25}
+                  className="absolute right-5 top-5 text-primary-600 hover:text-primary-900"
+                />
+              </button>
             </div>
           </div>
         </div>

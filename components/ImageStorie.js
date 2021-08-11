@@ -19,20 +19,16 @@ const ImageStorie = ({ gallery }) => {
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-7 lg:grid-cols-3 pt-10">
         {gallery.map((src, index) => {
           return (
-            <button
-              className="md:transform md:transition md:duration-500 md:hover:scale-105"
+            <Image
               key={index}
               onClick={() => onOpenHandler(src)}
-            >
-              <Image
-                className="rounded-md"
-                src={src}
-                alt=""
-                width={680}
-                height={420}
-                quality={33}
-              />
-            </button>
+              className="rounded-md cursor-pointer hover:bg-transparent hover:opacity-75 transition duration-500 ease-in-out"
+              src={src}
+              alt=""
+              width={680}
+              height={420}
+              quality={33}
+            />
           )
         })}
       </div>
