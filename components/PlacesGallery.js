@@ -3,7 +3,6 @@ import Image from '@/components/Image'
 const PlacesGallery = ({ galleryMap, place }) => {
   const data = galleryMap.filter((loc) => loc.name === place)
   const gallery = data.map((item) => item.img).flat()
-  const info = { shoots: gallery.length }
 
   return (
     <>
