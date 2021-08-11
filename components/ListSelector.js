@@ -29,7 +29,7 @@ const ListSelector = ({
       </h3>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative border-2 border-dashed border-primary-400 rounded-lg">
-          <Listbox.Button className="hover:bg-primary-100 rounded-lg p-4 text-left w-full flex justify-between items-center">
+          <Listbox.Button className="hover:bg-primary-100 dark:hover:bg-primary-900 rounded-lg p-4 text-left w-full flex justify-between items-center">
             <span className="block truncate font-semibold">{selected.name}</span>
             <SelectorIcon size={20} className="text-primary-600" />
           </Listbox.Button>
@@ -40,7 +40,7 @@ const ListSelector = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="mt-2 w-full text-left absolute z-10 overflow-auto bg-white border-2 border-primary-400 rounded-lg shadow-lg max-h-60">
+            <Listbox.Options className="mt-2 w-full text-left absolute z-10 overflow-auto bg-white dark:bg-gray-900 border-2 border-primary-400 rounded-lg shadow-lg max-h-60">
               {raw.map((item, index) => {
                 const unavailable = item.unavailable
                 return (
@@ -49,15 +49,19 @@ const ListSelector = ({
                     className={({ active }) =>
                       `${
                         active
-                          ? 'text-primary-900 bg-primary-100 cursor-pointer font-semibold'
-                          : 'text-gray-900'
+                          ? 'text-primary-900 dark:text-primary-700 bg-primary-100 dark:bg-primary-900 cursor-pointer font-semibold'
+                          : 'text-gray-900 dark:text-primary-100'
                       }
                           px-4 py-1`
                     }
                     value={item}
                     disabled={item.unavailable}
                   >
-                    <span className={unavailable ? 'text-gray-400' : 'text-gray-900'}>
+                    <span
+                      className={
+                        unavailable ? 'text-gray-400' : 'text-gray-900 dark:text-primary-200'
+                      }
+                    >
                       {item.name}
                     </span>
                   </Listbox.Option>
