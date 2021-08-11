@@ -47,7 +47,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
             <div>
               <ImageStorie gallery={gallery} />
-              <Places mapSettings={mapSettings} />
+              <div className="py-16">
+                <Places mapSettings={mapSettings} title="Locations" />
+              </div>
             </div>
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
