@@ -43,19 +43,35 @@ export default function PlacesLayout({ posts }) {
   }
   return (
     <div className="px-5">
-      <PageTitle>{'All places where I shooted'}</PageTitle>
+      <PageTitle>All places where I shooted</PageTitle>
+      <h2 className="font-bold text-xl md:text-2xl pt-2">
+        <span role="img" aria-label="">
+          📸
+        </span>
+        Total shoots - {data.images}
+      </h2>
       <div className="py-8 grid gap-5 grid-cols-1 lg:grid-cols-3">
         <div className="lg:col-span-3">
           <Places mapSettings={mapSettings} onLocationSelected={addPlaceHandler} viewPage={true} />
         </div>
         <div>
-          <ListSelector data={data.places} title={`Places - ${data.placesLength}`} />
-          {/* <Accordion data={data.places} title={`📍 Places - ${data.placesLength}`} /> */}
+          <ListSelector
+            data={data.places}
+            title="Total places"
+            counter={data.placesLength}
+            emoji="📍"
+            label="Select a place"
+          />
         </div>
 
         <div>
-          <ListSelector data={data.countries} title={`Countries - ${data.countriesLength}`} />
-          {/* <Accordion data={data.countries} title={`🌍 Countries - ${data.countriesLength}`} /> */}
+          <ListSelector
+            data={data.countries}
+            title="Total countries"
+            counter={data.countriesLength}
+            emoji="🌍"
+            label="Select a country"
+          />
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5">

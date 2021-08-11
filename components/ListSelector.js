@@ -1,7 +1,13 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 
-const ListSelector = ({ data, title = '' }) => {
+const ListSelector = ({
+  data,
+  label = 'Select an option',
+  title = '',
+  emoji = null,
+  counter = 0,
+}) => {
   const raw = data.map((item, index) => {
     return {
       id: index + 1,
@@ -10,12 +16,16 @@ const ListSelector = ({ data, title = '' }) => {
     }
   })
 
-  raw.unshift({ id: 0, name: title, unavailable: true })
+  raw.unshift({ id: 0, name: label, unavailable: true })
 
   const [selected, setSelected] = useState(raw[0])
 
   return (
     <div>
+      <h3 className="font-bold py-2">
+        <span className="mr-1">{emoji}</span>
+        {title} - {counter}
+      </h3>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative border-2 border-dashed border-primary-400 rounded-lg">
           <Listbox.Button className="hover:bg-primary-100 rounded-lg p-4 text-left w-full">
