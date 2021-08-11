@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
+import { SelectorIcon } from './icons'
 
 const ListSelector = ({
   data,
@@ -28,8 +29,9 @@ const ListSelector = ({
       </h3>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative border-2 border-dashed border-primary-400 rounded-lg">
-          <Listbox.Button className="hover:bg-primary-100 rounded-lg p-4 text-left w-full">
-            <span className="block truncate">{selected.name}</span>
+          <Listbox.Button className="hover:bg-primary-100 rounded-lg p-4 text-left w-full flex justify-between items-center">
+            <span className="block truncate font-semibold">{selected.name}</span>
+            <SelectorIcon size={20} className="text-primary-600" />
           </Listbox.Button>
 
           <Transition
@@ -45,15 +47,17 @@ const ListSelector = ({
                   <Listbox.Option
                     key={index}
                     className={({ active }) =>
-                      `${active ? 'text-primary-900 bg-primary-100' : 'text-gray-900'}
+                      `${
+                        active
+                          ? 'text-primary-900 bg-primary-100 cursor-pointer font-semibold'
+                          : 'text-gray-900'
+                      }
                           px-4 py-1`
                     }
                     value={item}
                     disabled={item.unavailable}
                   >
-                    <span
-                      className={unavailable ? 'text-gray-400' : 'text-gray-900 cursor-pointer'}
-                    >
+                    <span className={unavailable ? 'text-gray-400' : 'text-gray-900'}>
                       {item.name}
                     </span>
                   </Listbox.Option>

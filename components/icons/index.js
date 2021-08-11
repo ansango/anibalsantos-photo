@@ -4,6 +4,7 @@ export {
   HiOutlineMoon as MoonIcon,
   HiOutlineSun as SunIcon,
   HiOutlineXCircle as CloseIcon,
+  HiOutlineSelector as SelectorIcon,
 } from 'react-icons/hi'
 
 export { AiOutlineExpand as ExpandIcon } from 'react-icons/ai'
