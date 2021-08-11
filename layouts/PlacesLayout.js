@@ -36,7 +36,7 @@ export default function PlacesLayout({ posts }) {
     images: raw.flatMap((post) => post.images).length,
   }
 
-  const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
+  const mapSettings = { coordinates: allLocationsPosts, center: [44.965, -5.664], zoom: 4 }
 
   const [place, setPlace] = useState(null)
   const [isLoading, setIsILoading] = useState(false)
