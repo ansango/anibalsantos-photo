@@ -4,7 +4,7 @@ import Modal from './Modal'
 
 const PlacesGallery = ({ galleryMap, place }) => {
   const data = galleryMap.filter(
-    (loc) => loc.place.name === place || loc.place.city === place || loc.place.country === place
+    (loc) => loc.place.name === place || loc.place.area === place || loc.place.country === place
   )
   const gallery = data.map((item) => item.img).flat()
 

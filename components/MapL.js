@@ -9,7 +9,6 @@ const colorMarker = '#34D399'
 
 const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
-  console.log(coordinates)
   return (
     <>
       {viewPage ? (
