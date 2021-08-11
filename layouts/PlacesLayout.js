@@ -74,7 +74,7 @@ export default function PlacesLayout({ posts }) {
             data={data.areas}
             title="Total areas"
             counter={data.areasLength}
-            emoji="🌍"
+            emoji="🏙️"
             label="Select an area"
             onLocationSelected={addPlaceHandler}
           />
