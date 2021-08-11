@@ -18,7 +18,7 @@ export default function PlacesLayout({ posts }) {
   const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState(null)
-  const [isLoading, setisILoading] = useState(true)
+  const [isLoading, setisILoading] = useState(false)
   const addPlaceHandler = (_place) => {
     setisILoading(true)
     setPlace('')
