@@ -9,6 +9,7 @@ const colorMarker = '#34D399'
 
 const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
   const { coordinates, center, zoom } = mapSettings
+  console.log(coordinates)
   return (
     <>
       {viewPage ? (
@@ -25,12 +26,12 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
                 stroke={false}
                 eventHandlers={{
                   click: () => {
-                    onLocationSelected(coordinate.name)
+                    onLocationSelected(coordinate.place.name)
                   },
                 }}
               >
                 <Tooltip>
-                  <div className="font-bold">{coordinate.name}</div>
+                  <div className="font-bold">{coordinate.place.name}</div>
                 </Tooltip>
               </CircleMarker>
             )
@@ -50,7 +51,7 @@ const MapLight = ({ mapSettings, onLocationSelected, viewPage }) => {
                 stroke={false}
               >
                 <Tooltip>
-                  <div className="font-bold">{coordinate.name}</div>
+                  <div className="font-bold">{coordinate.place.name}</div>
                 </Tooltip>
               </CircleMarker>
             )
@@ -80,12 +81,12 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
                 stroke={false}
                 eventHandlers={{
                   click: () => {
-                    onLocationSelected(coordinate.name)
+                    onLocationSelected(coordinate.place.name)
                   },
                 }}
               >
                 <Tooltip>
-                  <div className="font-bold">{coordinate.name}</div>
+                  <div className="font-bold">{coordinate.place.name}</div>
                 </Tooltip>
               </CircleMarker>
             )
@@ -105,7 +106,7 @@ const MapDark = ({ mapSettings, onLocationSelected, viewPage }) => {
                 stroke={false}
               >
                 <Tooltip>
-                  <div className="font-bold">{coordinate.name}</div>
+                  <div className="font-bold">{coordinate.place.name}</div>
                 </Tooltip>
               </CircleMarker>
             )

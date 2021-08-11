@@ -4,13 +4,6 @@ title: Lisboa / Sintra / Azenhas do Mar / Salamanca
 date: '2020-09-04'
 summary: A trip to the center of Portugal and enjoying the summer
 tags: ['fujifilm', 'fuji c200', 'Canon EOS 50E']
-places:
-  [
-    { name: 'Lisboa', country: 'Portugal' },
-    { name: 'Sintra', country: 'Portugal' },
-    { name: 'Azenhas do Mar', country: 'Portugal' },
-    { name: 'Salamanca', country: 'Spain' },
-  ]
 mapCenter: [39.8369, -7.6]
 mapZoom: 7
 carousel:
@@ -24,10 +17,14 @@ galleryMap:
   [
     {
       img: ['/static/stories/2020-09-04/02.jpg', '/static/stories/2020-09-04/03.jpg'],
-      name: 'Lisboa',
+      place: { name: 'Lisboa', city: 'Lisboa', country: 'Portugal' },
       loc: [38.70775, -9.13659],
     },
-    { img: ['/static/stories/2020-09-04/04.jpg'], name: 'Sintra', loc: [38.83556, -9.35223] },
+    {
+      img: ['/static/stories/2020-09-04/04.jpg'],
+      place: { name: 'Sintra', city: 'Sintra', country: 'Portugal' },
+      loc: [38.83556, -9.35223],
+    },
     {
       img:
         [
@@ -37,12 +34,12 @@ galleryMap:
           '/static/stories/2020-09-04/08.jpg',
           '/static/stories/2020-09-04/09.jpg',
         ],
-      name: 'Azenhas do Mar',
+      place: { name: 'Azenhas do Mar', city: 'Azenhas do Mar', country: 'Portugal' },
       loc: [38.8369, -9.4603],
     },
     {
       img: ['/static/stories/2020-09-04/10.jpg'],
-      name: 'Boca do Inferno',
+      place: { name: 'Boca do Inferno', city: 'Boca do Inferno', country: 'Portugal' },
       loc: [38.6951841, -9.4140709, 15.25],
     },
     {
@@ -54,7 +51,7 @@ galleryMap:
           '/static/stories/2020-09-04/16.jpg',
           '/static/stories/2020-09-04/17.jpg',
         ],
-      name: 'Salamanca',
+      place: { name: 'Salamanca', city: 'Salamanca', country: 'Spain' },
       loc: [40.9701, -5.6635],
     },
   ]

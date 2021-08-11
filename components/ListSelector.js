@@ -8,6 +8,7 @@ const ListSelector = ({
   title = '',
   emoji = null,
   counter = 0,
+  onLocationSelected,
 }) => {
   const raw = data.map((item, index) => {
     return {
@@ -21,13 +22,18 @@ const ListSelector = ({
 
   const [selected, setSelected] = useState(raw[0])
 
+  const handleChange = (option) => {
+    setSelected(option)
+    onLocationSelected(option.name)
+  }
+
   return (
     <div>
       <h3 className="font-bold py-2">
         <span className="mr-1">{emoji}</span>
         {title} - {counter}
       </h3>
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={selected} onChange={handleChange}>
         <div className="relative border-2 border-dashed border-primary-400 rounded-lg">
           <Listbox.Button className="hover:bg-primary-100 dark:hover:bg-primary-900 rounded-lg p-4 text-left w-full flex justify-between items-center">
             <span className="block truncate font-semibold">{selected.name}</span>

@@ -1,5 +1,4 @@
 import { CardLoader, FillLoader, TitleLoader } from '@/components/Loader'
-import Accordion from '@/components/Accordion'
 import PageTitle from '@/components/PageTitle'
 import Places from '@/components/Places'
 import PlacesGallery from '@/components/PlacesGallery'
@@ -14,11 +13,13 @@ export default function PlacesLayout({ posts }) {
   })
 
   const raw = posts.map((post) => {
-    const places = post.places.map((place) => place.name)
-    const countries = post.places.map((place) => place.country)
-    const images = post.galleryMap.flatMap((place) => place.img)
+    const places = post.galleryMap.map((data) => data.place.name)
+    const cities = post.galleryMap.map((data) => data.place.city)
+    const countries = post.galleryMap.map((data) => data.place.country)
+    const images = post.galleryMap.flatMap((data) => data.img)
     return {
       places: places,
+      cities: cities,
       countries: countries,
       images: images,
     }
@@ -27,10 +28,13 @@ export default function PlacesLayout({ posts }) {
   const data = {
     places: [...new Set(raw.flatMap((post) => post.places))],
     placesLength: [...new Set(raw.flatMap((post) => post.places))].length,
+    cities: [...new Set(raw.flatMap((post) => post.cities))],
+    citiesLength: [...new Set(raw.flatMap((post) => post.cities))].length,
     countries: [...new Set(raw.flatMap((post) => post.countries))],
     countriesLength: [...new Set(raw.flatMap((post) => post.countries))].length,
     images: raw.flatMap((post) => post.images).length,
   }
+
   const mapSettings = { coordinates: allLocationsPosts, center: [40.965, -5.664], zoom: 5 }
 
   const [place, setPlace] = useState(null)
@@ -61,6 +65,7 @@ export default function PlacesLayout({ posts }) {
             counter={data.placesLength}
             emoji="📍"
             label="Select a place"
+            onLocationSelected={addPlaceHandler}
           />
         </div>
 
@@ -71,6 +76,7 @@ export default function PlacesLayout({ posts }) {
             counter={data.countriesLength}
             emoji="🌍"
             label="Select a country"
+            onLocationSelected={addPlaceHandler}
           />
         </div>
       </div>

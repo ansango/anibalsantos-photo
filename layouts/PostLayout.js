@@ -11,9 +11,9 @@ import Places from '@/components/Places'
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, date, title, places, tags, galleryMap, mapCenter, mapZoom } = frontMatter
+  const { slug, date, title, tags, galleryMap, mapCenter, mapZoom } = frontMatter
   const gallery = galleryMap.flatMap((data) => data.img)
-  const placesData = places.map((place) => place.name)
+  const placesData = galleryMap.map((data) => data.place.name)
   const mapSettings = { coordinates: galleryMap, center: mapCenter, zoom: mapZoom }
   return (
     <SectionContainer>

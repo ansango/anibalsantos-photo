@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Modal from './Modal'
 
 const PlacesGallery = ({ galleryMap, place }) => {
-  const data = galleryMap.filter((loc) => loc.name === place)
+  const data = galleryMap.filter((loc) => loc.place.name === place || loc.place.city === place)
   const gallery = data.map((item) => item.img).flat()
 
   const [showModal, setShowModal] = useState(false)
