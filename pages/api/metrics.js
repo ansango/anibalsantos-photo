@@ -4,6 +4,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 export default async (_, res) => {
   const posts = await getAllFilesFrontMatter('stories')
+  console.log(posts)
   const raw = posts.map((post) => {
     const places = post.galleryMap.map((data) => data.place.name)
     const areas = post.galleryMap.map((data) => data.place.area)
