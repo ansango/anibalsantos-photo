@@ -38,4 +38,7 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 })
