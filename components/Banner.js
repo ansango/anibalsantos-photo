@@ -5,15 +5,21 @@ import Link from './Link'
 const bannerImgs = {
   light: {
     href: '/stories/2018-03-30',
-    big: '/static/stories/2018-03-30/16.jpg',
-    sm1: '/static/stories/2018-03-30/15.jpg',
-    sm2: '/static/stories/2018-03-30/14.jpg',
+    big:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/16.jpg',
+    sm1:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/15.jpg',
+    sm2:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/14.jpg',
   },
   dark: {
     href: '/stories/2013-10-30',
-    big: '/static/stories/2013-10-30/22.jpg',
-    sm1: '/static/stories/2013-10-30/03.jpg',
-    sm2: '/static/stories/2013-10-30/06.jpg',
+    big:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/22.jpg',
+    sm1:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/03.jpg',
+    sm2:
+      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/06.jpg',
   },
 }
 
