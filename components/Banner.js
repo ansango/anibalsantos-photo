@@ -2,24 +2,23 @@ import { useTheme } from 'next-themes'
 import Image from './Image'
 import Link from './Link'
 
+const url = 'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo'
+
+const lightAlbum = '2014-04-11'
+const darkAlbum = '2013-10-30'
+
 const bannerImgs = {
   light: {
-    href: '/stories/2018-03-30',
-    big:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/16.jpg',
-    sm1:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/15.jpg',
-    sm2:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2018-03-30/14.jpg',
+    href: `/stories/${lightAlbum}`,
+    big: `${url}/${lightAlbum}/06.jpg`,
+    sm1: `${url}/${lightAlbum}/05.jpg`,
+    sm2: `${url}/${lightAlbum}/04.jpg`,
   },
   dark: {
-    href: '/stories/2013-10-30',
-    big:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/22.jpg',
-    sm1:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/03.jpg',
-    sm2:
-      'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo/2013-10-30/06.jpg',
+    href: `/stories/${darkAlbum}`,
+    big: `${url}/${darkAlbum}/22.jpg`,
+    sm1: `${url}/${darkAlbum}/03.jpg`,
+    sm2: `${url}/${darkAlbum}/06.jpg`,
   },
 }
 
