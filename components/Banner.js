@@ -5,7 +5,7 @@ import Link from './Link'
 const url = 'https://res.cloudinary.com/ansango/image/upload/v1631204931/ansango-photo'
 
 const lightAlbum = '2014-04-11'
-const darkAlbum = '2013-10-30'
+const darkAlbum = '2013-12-30'
 
 const bannerImgs = {
   light: {
@@ -16,9 +16,9 @@ const bannerImgs = {
   },
   dark: {
     href: `/stories/${darkAlbum}`,
-    big: `${url}/${darkAlbum}/22.jpg`,
-    sm1: `${url}/${darkAlbum}/03.jpg`,
-    sm2: `${url}/${darkAlbum}/06.jpg`,
+    big: `${url}/${darkAlbum}/05.jpg`,
+    sm1: `${url}/${darkAlbum}/06.jpg`,
+    sm2: `${url}/${darkAlbum}/07.jpg`,
   },
 }
 
